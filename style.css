@@ -1,3 +1,26 @@
 body {
     background-color: blueviolet;
 }
+#game_container {
+    background-color: darkgreen;
+    height: fit-content;
+    margin: auto;
+    border: 6px rgb(19, 68, 0) solid;
+    border-radius: 3%;
+
+}
+.button {
+    background-color: darkorange;
+    height: max-content;
+    text-align: center; 
+    border: 3px black solid; 
+    border-radius: 10%;
+    margin: auto;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 35px;
+}
+#player_column {
+
+    height: fit-content;
+    margin: 0 auto;
+}
