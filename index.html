@@ -9,15 +9,22 @@
 <body>
     <h1 class="flex_item">Cutthroat Cricket</h1>
     <div id="game_container" class="flex_item">
-    </div id="initial_buttons">
-    <div>
-        <input id="name_input" type="text">
-        <button id="enter_name" class="start_buttons" onclick="addPlayer()">Enter Name</button>
-        <button id="start_game" onclick="startGame()">Start Game</button>
     </div>
-    <div id="names">
+    <div id="game_controls">
+        <div id="in_game_controls" class="game_buttons" >
+            <div class="in_game_buttons" id="double">DOUBLE</div>
+            <div class="in_game_buttons" id="triple">TRIPLE</div>
+            <div class="in_game_buttons" id="undo">UNDO</div>
+            <div class="in_game_buttons" id="next">NEXT TURN</div>
+        </div>
+        <div id="start_controls" class="game_buttons">
+            <input id="name_input" class="game_buttons" type="text">
+            <button id="enter_name" class="game_buttons" onclick="addPlayer()">Enter Name</button>
+            <button id="start_game" class="game_buttons" onclick="startGame()">Start Game</button>
+            <div id="names"></div>
+        </div>
+    </div>
 
-    </div>
     <script type="text/javascript" src="./script.js"></script>
 </body>
 
