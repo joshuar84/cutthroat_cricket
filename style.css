@@ -1,26 +1,41 @@
 body {
-    background-color: blueviolet;
+    background-color: darkgreen;
+    justify-content: center;
 }
 #game_container {
-    background-color: darkgreen;
-    height: fit-content;
+    background-color: purple;
     margin: auto;
-    border: 6px rgb(19, 68, 0) solid;
-    border-radius: 3%;
-
+    border: 6px purple solid;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
 }
 .button {
     background-color: darkorange;
-    height: max-content;
     text-align: center; 
-    border: 3px black solid; 
-    border-radius: 10%;
-    margin: auto;  
+    border: 3px purple solid;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
+    height: 60px;  
+    text-shadow: 3px 1px blue;  
 }
-#player_column {
-
-    height: fit-content;
-    margin: 0 auto;
+.flex_item {
+    margin: 2px auto;
+    color: white;
+    font-size: auto;
+    flex-grow: 1;
+}
+h1 {
+    text-align: center;
+}
+#name {
+    background-color: black;
+    color: white;
+}
+.column {
+    flex-direction: column;
+    height: auto;
+    flex-wrap: nowrap;
 }
