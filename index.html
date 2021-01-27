@@ -9,16 +9,14 @@
 <body>
     <h1 class="flex_item">Cutthroat Cricket</h1>
     <div id="game_container" class="flex_item">
-        <div class="flex_item name column">
-            <div id="name" class="button flex_item">Name</div>
-            <div id="20" class="button flex_item">20</div>
-            <div id="19" class="button flex_item">19</div>
-            <div id="18" class="button flex_item">18</div>
-            <div id="17" class="button flex_item">17</div>
-            <div id="16" class="button flex_item">16</div>
-            <div id="15" class="button flex_item">15</div>
-            <div id="bull" class="button flex_item">BULL</div>
-        </div>
+    </div id="initial_buttons">
+    <div>
+        <input id="name_input" type="text">
+        <button id="enter_name" class="start_buttons" onclick="addPlayer()">Enter Name</button>
+        <button id="start_game" onclick="startGame()">Start Game</button>
+    </div>
+    <div id="names">
+
     </div>
     <script type="text/javascript" src="./script.js"></script>
 </body>
