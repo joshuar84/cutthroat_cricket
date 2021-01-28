@@ -114,103 +114,30 @@ const startGame = () => {
     game.currentObject = game.players[game.playerIndex];
 
 }
-const gameInProgress = () => {
-    let currentScore = game.currentObject.score;
-    let pts20 = 0;
-    let pts19 = 0;
-    let pts18 = 0;
-    let pts17 = 0;
-    let pts16 = 0;
-    let pts15 = 0;
-    let ptsbull = 0;
-    let score = document.getElementById(`score${game.currentObject.name}`);
-    let twenty = document.getElementById(`20${game.currentObject.name}`);
-    let nineteen = document.getElementById(`19${game.currentObject.name}`);
-    let eighteen = document.getElementById(`18${game.currentObject.name}`);
-    let seventeen = document.getElementById(`17${game.currentObject.name}`);
-    let sixteen = document.getElementById(`16${game.currentObject.name}`);
-    let fifteen = document.getElementById(`15${game.currentObject.name}`);
-    let bull = document.getElementById(`bull${game.currentObject.name}`);
-    twenty.addEventListener('mousedown', () => {
-        if (game.currentObject.tally20 >= 3) {
-            game.currentObject.twenty.push(20 * game.multipier);
-            game.currentObject.tally20 += game.multipier;
-            let over = game.currentObject.tally20 - 3;
-            let currentScore20 = over * 20;
-            pts20 = currentScore20;
-        } else if (game.currentObject.tally20 < 3) {
-            game.currentObject.twenty.push(20 * game.multipier);
-            game.currentObject.tally20 += game.multipier;
-        }
-        game.turn += 1;
-    })
-    nineteen.addEventListener('mousedown', () => {
-        game.currentObject.nineteen.push(19 * game.multipier);
-        game.currentObject.tally19 += game.multipier;
-        game.turn += 1;
-        console.log('19');
-        if (game.currentObject.tally19 >= 3) {
-            let over = game.currentObject.tally19 - 3;
-            let currentScore19 = over * 19;
-            pts19 = currentScore19;
-        }
-    })
-    eighteen.addEventListener('mousedown', () => {
-        game.currentObject.eighteen.push(18 * game.multipier);
-        game.currentObject.tally18 += game.multipier;
-        game.turn += 1;
-        console.log('18');
-        if (game.currentObject.tally18 >= 3) {
-            let over = game.currentObject.tally18 - 3;
-            let currentScore18 = over * 18;
-            pts18 = currentScore18;
-        }
-    })
-    seventeen.addEventListener('mousedown', () => {
-        game.currentObject.seventeen.push(17 * game.multipier);
-        game.currentObject.tally17 += game.multipier;
-        game.turn += 1;
-        console.log('17');
-        if (game.currentObject.tally17 >= 3) {
-            let over = game.currentObject.tally17 - 3;
-            let currentScore17 = over * 17;
-            pts17 = currentScore17;
-        }
-    })
-    sixteen.addEventListener('mousedown', () => {
-        game.currentObject.sixteen.push(16 * game.multipier);
-        game.currentObject.tally16 += game.multipier;
-        game.turn += 1;
-        console.log('16');
-        if (game.currentObject.tally16 >= 3) {
-            let over = game.currentObject.tally16 - 3;
-            let currentScore16 = over * 16;
-            pts16 = currentScore16;
-        }
-    })
-    fifteen.addEventListener('mousedown', () => {
-        game.currentObject.fifteen.push(15 * game.multipier);
-        game.currentObject.tally15 += game.multipier;
-        game.turn += 1;
-        console.log('15');
-        if (game.currentObject.tally15 >= 3) {
-            let over = game.currentObject.tally15 - 3;
-            let currentScore15 = over * 15;
-            pts15 = currentScore15;
-        }
-    })
-    bull.addEventListener('mousedown', () => {
-        game.currentObject.bull.push(25 * game.multipier);
-        game.currentObject.tallybull += game.multipier;
-        game.turn += 1;
-        console.log('bull');
-        if (game.currentObject.tallybull >= 3) {
-            let over = game.currentObject.tallybull - 3;
-            let currentScorebull = over * 25;
-            ptsbull = currentScorebull;
-        }
 
-    });
-    let allPoints = pts20;
-    score.innerText = allPoints;
-}
+let currentScore = game.currentObject.score;
+let score = document.getElementById(`score${game.currentObject.name}`);
+let twenty = document.getElementById(`20${game.currentObject.name}`);
+let nineteen = document.getElementById(`19${game.currentObject.name}`);
+let eighteen = document.getElementById(`18${game.currentObject.name}`);
+let seventeen = document.getElementById(`17${game.currentObject.name}`);
+let sixteen = document.getElementById(`16${game.currentObject.name}`);
+let fifteen = document.getElementById(`15${game.currentObject.name}`);
+let bull = document.getElementById(`bull${game.currentObject.name}`);
+twenty.addEventListener('mousedown', () => {
+    let score20 = game.currentObject.twenty;
+    if (score20 === []) {
+        score20.push(20 * game.multipier);
+    } else {
+        let total = score20.reduce((acc, curNum) => {
+            return acc + curNum;
+        }, -60);
+        if (total >= 0) {
+            let scoreNow = 20 * game.multipier;
+            score20.push(scoreNow);
+            score.innerText += scoreNow;
+        }
+    }
+})
+
+
