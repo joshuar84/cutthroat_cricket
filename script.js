@@ -93,6 +93,12 @@ const game = {
             triple.style.background = "red";
         }
     },
+    add20() {
+        let currentScore = this.currentObject.score;
+        let score = document.getElementById(`score${this.currentObject.name}`);
+        let twenty = document.getElementById(`20${this.currentObject.name}`);
+        console.log(currentScore);
+    }
 }
 
 double.addEventListener("mousedown", e => {
@@ -125,19 +131,7 @@ let sixteen = document.getElementById(`16${game.currentObject.name}`);
 let fifteen = document.getElementById(`15${game.currentObject.name}`);
 let bull = document.getElementById(`bull${game.currentObject.name}`);
 twenty.addEventListener('mousedown', () => {
-    let score20 = game.currentObject.twenty;
-    if (score20 === []) {
-        score20.push(20 * game.multipier);
-    } else {
-        let total = score20.reduce((acc, curNum) => {
-            return acc + curNum;
-        }, -60);
-        if (total >= 0) {
-            let scoreNow = 20 * game.multipier;
-            score20.push(scoreNow);
-            score.innerText += scoreNow;
-        }
-    }
+   game.add20()
 })
 
 
